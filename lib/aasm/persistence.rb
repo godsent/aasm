@@ -3,24 +3,12 @@ module AASM
     class << self
 
       def load_persistence(base)
-        # Use a fancier auto-loading thingy, perhaps.  When there are more persistence engines.
-        hierarchy = base.ancestors.map {|klass| klass.to_s}
-
-        if hierarchy.include?("ActiveRecord::Base")
-          include_persistence base, :active_record
-        elsif hierarchy.include?("Mongoid::Document")
-          include_persistence base, :mongoid
-        elsif hierarchy.include?("Sequel::Model")
-          include_persistence base, :sequel
-        else
-          include_persistence base, :plain
-        end
+        include_persistence base, :plain
       end
 
       private
 
       def include_persistence(base, type)
-        require File.join(File.dirname(__FILE__), 'persistence', "#{type}_persistence")
         base.send(:include, constantize("AASM::Persistence::#{capitalize(type)}Persistence"))
       end
 

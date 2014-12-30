@@ -1,5 +1,3 @@
-require 'ostruct'
-
 require 'aasm/version'
 require 'aasm/errors'
 require 'aasm/configuration'
@@ -13,3 +11,4 @@ require 'aasm/localizer'
 require 'aasm/state_machine'
 require 'aasm/persistence'
 require 'aasm/aasm'
+require 'aasm/persistence/plain_persistence'
