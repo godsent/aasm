@@ -1,4 +1,4 @@
-# AASM - Ruby state machines
+# AASM - Ruby state machines (RPG Maker VX ACE version)
 
 [![Gem Version](https://badge.fury.io/rb/aasm.svg)](http://badge.fury.io/rb/aasm)
 [![Build Status](https://travis-ci.org/aasm/aasm.svg?branch=master)](https://travis-ci.org/aasm/aasm)
